@@ -1,4 +1,5 @@
 const express = require('express');
+const list = require('../controller/index').list
 
 //路由中间件
 const router = express.Router();
@@ -27,5 +28,7 @@ router.put('/index',(req,res,next)=>{
     console.log(data);
     res.send(data);
 })
+
+router.get('/api/list',list)
 
 module.exports = router;
